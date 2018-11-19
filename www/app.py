@@ -1,8 +1,9 @@
 import logging;logging.basicConfig(level=logging.INFO)
 import asyncio,os,json,time
 from aiohttp import web
+from datetime import datetime
 def index(request):
-	return web.Response(body='<h1>Awesome</h1>')
+	return web.Response(body='Awesome')
 @asyncio.coroutine
 def init(loop):
 	app = web.Application()
@@ -13,3 +14,4 @@ def init(loop):
 loop = asyncio.get_event_loop()
 loop.run_until_complete(init(loop))
 loop.run_forever()
+
